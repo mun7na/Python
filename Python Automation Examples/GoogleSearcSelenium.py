@@ -1,24 +1,16 @@
 from selenium import webdriver
+from selenium.webdriver import chrome
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
-search_string = input("Input the URL or string you want to search : ")
+Search_string = input("Input the URL or string you want to search : ")
 
-driver = webdriver.Firefox()
-
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+web = webdriver.Chrome(options=options,service=Service(ChromeDriverManager().install()))
+web.maximize_window()
 for i in range(1):
-    elements = driver.get("https://www.google.com/search?q=" + search_string + "&start=" + str(i))
+    elements = web.get("https://www.google.com/search?q=" + Search_string + "&start=" + str(i))
 
-
-#https://www.google.com/search? q=1&start=0
-#Chromedriver is not working
-# {
-# import webdriver
-# from selenium import webdriver
-#
-# # create webdriver object
-# driver = webdriver.Firefox()
-#
-# # get google.co.in
-# driver.get("https://google.co.in / search?q = geeksforgeeks")
-# }
 
 

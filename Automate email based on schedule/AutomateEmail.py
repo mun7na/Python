@@ -74,7 +74,7 @@ def mail():
     smtp.starttls()
 
     # Login with your email and password
-    smtp.login('munna75757575@gmail.com', 'aaaaaaaaaaaaa')
+    smtp.login('munna75757575@gmail.com', "aaaaa")
 
     # Call the message function
     msg = message("Good!", "Hi there!",
@@ -93,8 +93,8 @@ def mail():
     smtp.quit()
 
 
-#schedule.every(2).seconds.do(mail)
-schedule.every(1).minutes.do(mail)
+schedule.every(2).seconds.do(mail)
+#schedule.every(1).minutes.do(mail)
 #schedule.every().hour.do(mail)
 #schedule.every().day.at("06:45").do(mail)
 #schedule.every(5).to(10).minutes.do(mail)
